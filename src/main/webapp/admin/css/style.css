@@ -1,0 +1,242 @@
+:root {
+            --sidebar-width: 260px;
+            --premium-gold: #c5a059; /* สีทองที่ดูนุ่มนวลกว่าเดิม */
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --border-color: #333333;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --success-color: #2ecc71;
+            --danger-color: #e74c3c;
+            --info-color: #3498db;
+        }
+        body { background-color: #0f0f0f; color: #fff; font-family: 'Prompt', sans-serif; overflow-x: hidden; }
+        
+.sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #000000;
+            border-right: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+        }
+
+        .sidebar-brand {
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            border-bottom: 1px solid #222;
+            margin-bottom: 20px;
+        }
+
+        .nav-link-admin {
+            padding: 12px 25px;
+            color: #888;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .nav-link-admin i { margin-right: 15px; }
+
+        .nav-link-admin:hover, .nav-link-admin.active {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            border-left: 4px solid var(--gold);
+        }
+
+        /* Main Content Area */
+.main-content {
+            margin-left: var(--sidebar-width);
+            padding: 30px;
+            width: calc(100% - var(--sidebar-width));
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 991.98px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.active { transform: translateX(0); }
+            .main-content { margin-left: 0; width: 100%; padding: 20px; }
+        }
+
+        /* Top Navbar inside content */
+        .top-nav {
+            background: var(--dark-card);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+.admin-card { 
+            background-color: var(--dark-card); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            transition: box-shadow 0.3s ease;
+        }
+        .admin-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+
+        /* --- Typography: หัวข้อและข้อความ --- */
+        h2.text-warning {
+            font-weight: 600;
+            color: var(--premium-gold) !important;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h4.text-info, h4.text-warning {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px !important;
+        }
+        h4.text-info { color: var(--info-color) !important; }
+        h4.text-warning { color: var(--premium-gold) !important; }
+
+        .text-muted { color: var(--text-secondary) !important; }
+
+        /* --- Table Styling: สะอาด ทันสมัย --- */
+        .table-responsive {
+            border: none;
+            scrollbar-width: thin; /* สำหรับ Firefox */
+            scrollbar-color: var(--premium-gold) transparent;
+        }
+        /* สำหรับ Chrome/Safari */
+        .table-responsive::-webkit-scrollbar { height: 6px; }
+        .table-responsive::-webkit-scrollbar-thumb { background-color: var(--premium-gold); border-radius: 3px; }
+
+        .table-dark {
+            background-color: transparent;
+            --bs-table-border-color: var(--border-color);
+            font-size: 0.95rem;
+        }
+        
+        .table-dark thead th {
+            color: var(--premium-gold);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .table-dark tbody td {
+            padding: 15px;
+            vertical-align: middle;
+            color: var(--text-secondary);
+        }
+
+        .table-hover tbody tr:hover td {
+            color: var(--text-primary);
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* --- Badge & Forms: ปรับลุคให้ดูแพง --- */
+        .status-badge {
+            font-weight: 400;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .bg-success { background-color: rgba(46, 204, 113, 0.2) !important; color: var(--success-color); border: 1px solid rgba(46, 204, 113, 0.4); }
+        .bg-danger { background-color: rgba(231, 76, 60, 0.2) !important; color: var(--danger-color); border: 1px solid rgba(231, 76, 60, 0.4); }
+
+        .form-control, .form-select {
+            background-color: rgba(0,0,0,0.2) !important;
+            border: 1px solid var(--border-color) !important;
+            color: var(--text-primary) !important;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--premium-gold) !important;
+            box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.15);
+        }
+
+        /* --- Buttons: ดีไซน์พรีเมียม --- */
+        .btn-gold {
+            background: linear-gradient(135deg, #c5a059 0%, #a68545 100%);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+        }
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #c5a059 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
+            color: #000;
+        }
+
+        .edit-btn { border-color: var(--premium-gold); color: var(--premium-gold); }
+        .edit-btn:hover { background-color: var(--premium-gold); color: #000; }
+
+        .cancel-btn { background-color: var(--border-color); border: none; color: var(--text-secondary); }
+        .cancel-btn:hover { background-color: #444; color: var(--text-primary); }
+
+        /* DataTables Customization */
+        .dataTables_wrapper .dataTables_length select,
+        .dataTables_wrapper .dataTables_filter input {
+            background-color: var(--dark-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 6px;
+            padding: 5px 10px;
+        }
+        .dataTables_wrapper .dataTables_info,
+        .dataTables_wrapper .dataTables_paginate {
+            color: var(--text-secondary) !important;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 991.98px) {
+        .sidebar {
+            transform: translateX(-100%); /* ซ่อน Sidebar */
+        }
+        .sidebar.active {
+            transform: translateX(0); /* แสดงเมื่อสั่งเปิด */
+        }
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+    
+    .table-responsive {
+        border: none;
+        margin-bottom: 0;
+    }
+    
+    /* ปรับแต่ง Input ในตารางให้เล็กลงเมื่ออยู่ในมือถือ */
+    .edit-input-name, .edit-input-type, .edit-input-price {
+        min-width: 100px;
+    }
+
+    .admin-card { 
+        background: #1a1a1a; 
+        border: 1px solid #333; 
+        border-radius: 15px; 
+        padding: 1.5rem; 
+        margin-bottom: 20px; 
+        height: 100%; /* ให้การ์ดสูงเท่ากันใน row */
+    }

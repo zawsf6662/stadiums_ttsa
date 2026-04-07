@@ -1,0 +1,148 @@
+      :root {
+            --bg-dark: #121212;          /* ดำพื้นหลัง */
+            --bg-card: #1e1e1e;          /* ดำการ์ด */
+            --primary-yellow: #ffeb3b;   /* เหลืองหลัก */
+            --hover-yellow: #fdd835;     /* เหลืองตอน Hover */
+            --text-light: #e0e0e0;       /* เทาอ่อน */
+            --text-dark: #212121;        /* ดำตัวอักษรบนพื้นเหลือง */
+        }
+
+         body { background-color: #121212; color: #e0e0e0; }
+        .auth-card { background: #1e1e1e; border: 1px solid #333; border-radius: 15px; padding: 2rem; margin-top: 5rem; }
+        .form-control { background: #2a2a2a; border: 1px solid #444; color: #fff; }
+        .form-control:focus { background: #333; border-color: #ffeb3b; color: #fff; box-shadow: none; }
+        .form-control { background: #2a2a2a; border: 1px solid #444; color: #fff; }
+        .btn-gold { background: #ffeb3b; color: #000; font-weight: bold; }
+        
+        /* Navbar Style */
+        .navbar-custom {
+            background-color: #000000;
+            border-bottom: 3px solid var(--primary-yellow);
+            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-yellow) !important;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin-left: 1rem;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-yellow) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1579952362224-d9472e3a103c?q=80&w=1920') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 6rem 0;
+            margin-bottom: 4rem;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Layer สีดำทับรูป */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section h1 {
+            color: var(--primary-yellow);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Stadium Card Style */
+        .stadium-card {
+            border: 1px solid #333;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: var(--bg-card);
+            overflow: hidden;
+        }
+        .stadium-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-yellow);
+            box-shadow: 0 10px 30px rgba(255, 235, 59, 0.2);
+        }
+        .card-header-custom {
+            background-color: #2a2a2a;
+            border-bottom: 1px solid #444;
+            padding: 1.25rem;
+        }
+        .card-title-custom {
+            color: var(--primary-yellow);
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Status Badges */
+        .badge-status {
+            font-weight: 600;
+            padding: 0.6em 1.2em;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .status-available {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+        .status-occupied {
+            background-color: rgba(220, 53, 69, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+
+        /* Booking Button */
+        .btn-booking {
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+            border: none;
+            font-weight: 700;
+            padding: 0.8rem;
+            width: 100%;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+        .btn-booking:hover {
+            background-color: var(--hover-yellow);
+            transform: scale(1.03);
+        }
+        .btn-booking:disabled {
+            background-color: #444;
+            color: #888;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            color: #888;
+            padding: 3rem 0;
+            margin-top: 6rem;
+            border-top: 1px solid #333;
+        }
+        
+        /* Real-time Update Animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 235, 59, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 235, 59, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 235, 59, 0); }
+        }
+        .realtime-update {
+            animation: pulse 1.5s;
+        }
